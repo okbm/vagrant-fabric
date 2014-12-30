@@ -62,6 +62,8 @@ $ vagrant sandbox status
 - fab --list がよく忘れる
 - __init__.pyとかに分けてほうがいい？
 - precommitにテスト走らせるみたいなコマンド潜ませたい
+- これ参考になるかも
+  - https://github.com/stephenmcd/mezzanine/blob/master/mezzanine/project_template/fabfile.py
 
 ## other
 - [複数プロジェクトを抱えるチームでのデプロイ自動化 | SOTA](http://deeeet.com/writing/2014/10/30/fabric/)

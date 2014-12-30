@@ -8,6 +8,10 @@ import cuisine
 
 env.hosts = ['vagrant@192.168.56.101']
 
+# todo https://github.com/stephenmcd/mezzanine/blob/master/mezzanine/project_template/fabfile.py を参考に置き換える
+env.user = 'vagrant'
+env.password = 'vagrant'
+
 @task
 def update_packages():
     puts(green('update packages'))
@@ -43,3 +47,4 @@ def main():
     restart_application()
 
     puts(green('finish script'))
+
