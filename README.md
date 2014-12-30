@@ -29,6 +29,7 @@ vagrantをfabricでセットアップしてみる
 ```
 $ easy_install pip
 $ pip install fabric
+$ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinstall
 ```
 
 ## Install
