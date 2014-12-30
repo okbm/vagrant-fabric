@@ -1,2 +1,6 @@
+# -*- coding: utf-8 -*-
+from fabric.api import run
+
 def hello():
-    print("Hello world!")
+    run("uname -n")
+    run("pwd")

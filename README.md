@@ -36,5 +36,6 @@ $ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinst
 
 ```
 $ vagrant up
+$ fab -H vagrant@192.168.56.101 hello
 $ vagrant ssh
 ```
