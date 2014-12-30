@@ -28,7 +28,7 @@ vagrantをfabricでセットアップしてみる
 - fabric
 ```
 $ easy_install pip
-$ pip install fabric
+$ pip install fabric cuisine
 $ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinstall
 ```
 
@@ -36,14 +36,13 @@ $ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinst
 
 ```
 $ vagrant up
-$ fab -H vagrant@192.168.56.101 update_packages
+$ fab main
 $ vagrant ssh
 ```
 
 ## developer memo
 - fabtool?
   - [Welcome to fabtools’s documentation! — fabtools 0.17.0 documentation](http://fabtools.readthedocs.org/en/0.17.0/)
-
 - vagrant確認中はsandboxを有効にする
 
 ```
@@ -58,6 +57,10 @@ $ vagrant sandbox status
 
 - saharaのインストールが失敗する
   - [jedi4ever/sahara](https://github.com/jedi4ever/sahara)
+  - vagrant plugin updateではアップデートできず…。
+
+- fab --list がよく忘れる
 
 ## other
 - [複数プロジェクトを抱えるチームでのデプロイ自動化 | SOTA](http://deeeet.com/writing/2014/10/30/fabric/)
+- [意識の低い自動化](http://www.slideshare.net/greenasparagus/ss-42424543)
