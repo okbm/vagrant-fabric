@@ -60,7 +60,10 @@ $ vagrant sandbox status
   - vagrant plugin updateではアップデートできず…。
 
 - fab --list がよく忘れる
+- __init__.pyとかに分けてほうがいい？
+- precommitにテスト走らせるみたいなコマンド潜ませたい
 
 ## other
 - [複数プロジェクトを抱えるチームでのデプロイ自動化 | SOTA](http://deeeet.com/writing/2014/10/30/fabric/)
 - [意識の低い自動化](http://www.slideshare.net/greenasparagus/ss-42424543)
+- [Fabric Python Developers Festa 2013.03 #pyfes // Speaker Deck](https://speakerdeck.com/drillbits/fabric-python-developers-festa-2013-dot-03-number-pyfes)
