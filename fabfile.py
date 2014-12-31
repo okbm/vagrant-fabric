@@ -41,7 +41,7 @@ def setup_packages():
     sudo ("ln -fs /home/vagrant /var/www")
 
     # php
-    sudo("add-apt-repository ppa:ondrej/php5")
+    sudo("add-apt-repository -y ppa:ondrej/php5")
 
     packages = '''
         libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug php5-cli php5
