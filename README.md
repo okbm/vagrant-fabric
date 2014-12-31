@@ -25,7 +25,7 @@ vagrantをfabricでセットアップしてみる
 ```
 $ easy_install pip
 $ pip install fabric cuisine
-$ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinstall
+$ pip install paramiko==1.10
 ```
 
 ## Install
@@ -33,7 +33,6 @@ $ pip install paramiko==1.10  # paramikoがいるってエラーでたのでinst
 ```
 $ vagrant up
 $ fab main
-$ vagrant ssh
 ```
 
 ## developer memo
