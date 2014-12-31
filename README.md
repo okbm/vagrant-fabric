@@ -6,13 +6,13 @@ vagrantをfabricでセットアップしてみる
 
 | インストール | version |
 |:-----------|:------------|
-| php        |        This |
-| apache     |      column |
-| mysql      |        will |
-| redis      |          be |
-| python     |       right |
-| composer   |       right |
-| phpunit    |       right |
+| php        |5.5.20|
+| apache     |2.4.10|
+| mysql      |5.5.40|
+| redis      |2.2.12|
+| python     |2.7.3|
+| composer   |-|
+| phpunit    |4.3|
 
 ## Requirement
 

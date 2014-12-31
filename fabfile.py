@@ -16,7 +16,7 @@ env.password = 'vagrant'
 def update_packages():
     puts(green('update packages'))
     # TODO あとでコメントアウト解除する
-    sudo("apt-get update")
+    # sudo("apt-get update")
 
 # 使いそうなツール
 @task
@@ -44,16 +44,22 @@ def setup_packages():
     sudo("add-apt-repository ppa:ondrej/php5")
 
     packages = '''
-        libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug php5-cli php5 mysql-server-5.5
+        libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug php5-cli php5
         '''.split()
 
     for pkg in packages:
         cuisine.package_ensure(pkg)
 
+    # other
+    cuisine.package_ensure('mysql-server-5.5')
+    cuisine.package_ensure('redis-server')
+
     # composer
-    # TODO あとでコメントアウト解除する
-    # run("curl -sS https://getcomposer.org/installer | php")
-    # sudo("mv composer.phar /usr/local/bin/composer")
+    #TODO あとでコメントアウト解除する
+    #run("curl -sS https://getcomposer.org/installer | php")
+    #sudo("mv composer.phar /usr/local/bin/composer")
+    #run('composer global require "phpunit/phpunit=4.3.*"')
+    #run('echo PATH="$PATH":~/.composer/vendor/bin/ >> ~/.bashrc')
 
 @task
 def restart_application():
