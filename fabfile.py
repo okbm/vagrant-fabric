@@ -15,14 +15,15 @@ env.password = 'vagrant'
 @task
 def update_packages():
     puts(green('update packages'))
-    #sudo("apt-get update")
+    # TODO あとでコメントアウト解除する
+    sudo("apt-get update")
 
 # 使いそうなツール
 @task
 def setup_devtools():
     puts(green('Installing Devtools'))
     packages = '''
-        vim curl wget build-essential tmux screen zsh make sqlite3 tig tree locate git-core
+        vim curl wget build-essential tmux screen zsh make sqlite3 tig tree locate git-core python-software-properties
         '''.split()
 
     for pkg in packages:
@@ -40,16 +41,19 @@ def setup_packages():
     sudo ("ln -fs /home/vagrant /var/www")
 
     # php
+    sudo("add-apt-repository ppa:ondrej/php5")
+
     packages = '''
-        php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug
+        libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug php5-cli php5 mysql-server-5.5
         '''.split()
 
     for pkg in packages:
         cuisine.package_ensure(pkg)
 
     # composer
-    run("curl -sS https://getcomposer.org/installer | php")
-    sudo("mv composer.phar /usr/local/bin/composer")
+    # TODO あとでコメントアウト解除する
+    # run("curl -sS https://getcomposer.org/installer | php")
+    # sudo("mv composer.phar /usr/local/bin/composer")
 
 @task
 def restart_application():

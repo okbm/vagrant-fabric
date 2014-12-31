@@ -11,12 +11,8 @@ vagrantをfabricでセットアップしてみる
 | mysql      |        will |
 | redis      |          be |
 | python     |       right |
-
-- その他
-  - git
-  - zsh
-  - curl
-  - など
+| composer   |       right |
+| phpunit    |       right |
 
 ## Requirement
 
