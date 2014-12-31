@@ -32,7 +32,24 @@ def setup_devtools():
 @task
 def setup_packages():
     puts(green('Installing Packages'))
+
+    # apache2
     cuisine.package_ensure('apache2')
+
+    sudo ("rm -rf /var/www")
+    sudo ("ln -fs /home/vagrant /var/www")
+
+    # php
+    packages = '''
+        php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php5-mcrypt php5-xdebug
+        '''.split()
+
+    for pkg in packages:
+        cuisine.package_ensure(pkg)
+
+    # composer
+    run("curl -sS https://getcomposer.org/installer | php")
+    sudo("mv composer.phar /usr/local/bin/composer")
 
 @task
 def restart_application():
