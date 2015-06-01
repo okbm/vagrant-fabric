@@ -60,6 +60,9 @@ def setup_packages():
     run('composer global require "phpunit/phpunit=4.3.*"')
     run('echo PATH="$PATH":~/.composer/vendor/bin/ >> ~/.bashrc')
 
+    # nvm
+    run("git clone https://github.com/creationix/nvm.git ~/.nvm")
+
 @task
 def restart_application():
     puts(green('Restarting application'))
@@ -76,20 +79,12 @@ def setup_original():
     run('echo "     StrictHostKeyChecking no" >> $HOME/.ssh/config');
     run('chmod 600 $HOME/.ssh/config');
 
-    # git
+    # dotfiles
     run('git clone git@github.com:okbm/dotfiles.git');
     run('WORK=$HOME/');
 
     # mysql
     # mysql -uroot -proot < $WORK/misc/local-create.sql
-
-@task
-def setup_tmp():
-    puts(green('tmp done'))
-#   確認用のコマンドをここで動かしてOKなら別のところに移動させる
-    # mysql
-    # mysql -uroot -proot < $WORK/misc/local-create.sql
-
 
 @task
 def main():
@@ -99,7 +94,5 @@ def main():
     restart_application()
 
     setup_original()
-    setup_tmp()
 
     puts(green('finish script'))
-
